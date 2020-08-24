@@ -7,6 +7,10 @@
 //
 
 import SwiftUI
+//will help eventually bring image to desired format
+import CoreImage
+//has the filters we are using
+import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
     @State private var blurAmount: CGFloat = 0 {
@@ -62,6 +66,62 @@ struct UsingActionSheet: View {
     }
 }
 
+struct UsingCoreImage: View {
+    @State private var image: Image?
+    
+    var body: some View {
+        VStack {
+            image?
+            .resizable()
+            .scaledToFit()
+        }
+    //have to attach this to the VStack and not the image. Because if there is no image it would never "appear" and the function would never run.
+        .onAppear(perform: loadImage)
+    }
+    func loadImage() {
+        //core Image only works with CIImage. so we have to convert our image into that. we cannot it convert to it directly from a swiftui Image.
+        guard let inputImage = UIImage(named: "exampleBanana") else { return }
+        let beginImage = CIImage(image: inputImage)
+        
+        //creating the context and filter
+        let context = CIContext()
+        let currentFilter = CIFilter.pixellate()
+        
+        currentFilter.inputImage = beginImage
+        currentFilter.scale = 100
+        
+        // get a CIImage from our filter or exit if that fails
+        guard let outputImage = currentFilter.outputImage else { return }
+
+        // attempt to get a CGImage from our CIImage
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+            // convert that to a UIImage
+            let uiImage = UIImage(cgImage: cgimg)
+
+            // and convert that to a SwiftUI image
+            image = Image(uiImage: uiImage)
+        }
+    }
+}
+
+struct WrappingUIKitViews: View {
+    @State private var image: Image?
+    @State private var showingImagePicker = false
+    
+    var body: some View {
+        VStack {
+            image?
+                .resizable()
+                .scaledToFit()
+            Button("Select an image") {
+                self.showingImagePicker = true
+            }
+        }
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePicker()
+        }
+    }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
