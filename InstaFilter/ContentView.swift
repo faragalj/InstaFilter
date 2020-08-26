@@ -104,8 +104,20 @@ struct UsingCoreImage: View {
     }
 }
 
+
+class ImageSaver: NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    }
+    
+    @objc func saveError(_ image: UIImage, didFinishSavingwithError error: Error?, contextInfo: UnsafeRawPointer) {
+        print("Save finished")
+    }
+}
+
 struct WrappingUIKitViews: View {
     @State private var image: Image?
+    @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
     
     var body: some View {
@@ -117,10 +129,22 @@ struct WrappingUIKitViews: View {
                 self.showingImagePicker = true
             }
         }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker()
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            //passing it in to the @Biding property, when one chnages the other will too
+            ImagePicker(image: self.$inputImage)
         }
     }
+    
+    func loadImage() {
+        //takes the image we recieived form image picker and converts it to a swiftUI Image we can use in our view
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
+        
+        //saving the photo to the user library. Since we are not editing it at all right now, it will simply just duplicate the photo
+        let imageSaver = ImageSaver()
+        imageSaver.writeToPhotoAlbum(image: inputImage)
+    }
+    
 }
 
 
