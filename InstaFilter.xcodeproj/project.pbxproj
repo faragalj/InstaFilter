@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9210991424F84A5F00FCAF45 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9210991324F84A5F00FCAF45 /* ImagePicker.swift */; };
 		92866A6324F2F86600BD521A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92866A6224F2F86600BD521A /* AppDelegate.swift */; };
 		92866A6524F2F86600BD521A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92866A6424F2F86600BD521A /* SceneDelegate.swift */; };
 		92866A6724F2F86600BD521A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92866A6624F2F86600BD521A /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9210991324F84A5F00FCAF45 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		92866A5F24F2F86600BD521A /* InstaFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92866A6224F2F86600BD521A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92866A6424F2F86600BD521A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				92866A6224F2F86600BD521A /* AppDelegate.swift */,
 				92866A6424F2F86600BD521A /* SceneDelegate.swift */,
 				92866A6624F2F86600BD521A /* ContentView.swift */,
+				9210991324F84A5F00FCAF45 /* ImagePicker.swift */,
 				92866A6824F2F86900BD521A /* Assets.xcassets */,
 				92866A6D24F2F86900BD521A /* LaunchScreen.storyboard */,
 				92866A7024F2F86900BD521A /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92866A6324F2F86600BD521A /* AppDelegate.swift in Sources */,
+				9210991424F84A5F00FCAF45 /* ImagePicker.swift in Sources */,
 				92866A6524F2F86600BD521A /* SceneDelegate.swift in Sources */,
 				92866A6724F2F86600BD521A /* ContentView.swift in Sources */,
 			);
