@@ -14,6 +14,7 @@
 		92866A6924F2F86900BD521A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92866A6824F2F86900BD521A /* Assets.xcassets */; };
 		92866A6C24F2F86900BD521A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92866A6B24F2F86900BD521A /* Preview Assets.xcassets */; };
 		92866A6F24F2F86900BD521A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92866A6D24F2F86900BD521A /* LaunchScreen.storyboard */; };
+		92D03A1C24FACEA7002E2A93 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D03A1B24FACEA7002E2A93 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		92866A6B24F2F86900BD521A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92866A6E24F2F86900BD521A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92866A7024F2F86900BD521A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92D03A1B24FACEA7002E2A93 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				92866A6224F2F86600BD521A /* AppDelegate.swift */,
 				92866A6424F2F86600BD521A /* SceneDelegate.swift */,
 				92866A6624F2F86600BD521A /* ContentView.swift */,
+				92D03A1B24FACEA7002E2A93 /* ImageSaver.swift */,
 				9210991324F84A5F00FCAF45 /* ImagePicker.swift */,
 				92866A6824F2F86900BD521A /* Assets.xcassets */,
 				92866A6D24F2F86900BD521A /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				92866A6324F2F86600BD521A /* AppDelegate.swift in Sources */,
 				9210991424F84A5F00FCAF45 /* ImagePicker.swift in Sources */,
+				92D03A1C24FACEA7002E2A93 /* ImageSaver.swift in Sources */,
 				92866A6524F2F86600BD521A /* SceneDelegate.swift in Sources */,
 				92866A6724F2F86600BD521A /* ContentView.swift in Sources */,
 			);
